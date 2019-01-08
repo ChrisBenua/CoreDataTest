@@ -19,6 +19,8 @@
 		AA0F77B721DA556C00C67AAA /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F77B621DA556C00C67AAA /* Anchor.swift */; };
 		AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D091821DE1F57008859E1 /* AddCompanyController.swift */; };
 		AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31270921DE9628004F7C83 /* SelectPhotoController.swift */; };
+		AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */; };
+		AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		AA0F77B621DA556C00C67AAA /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		AA2D091821DE1F57008859E1 /* AddCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyController.swift; sourceTree = "<group>"; };
 		AA31270921DE9628004F7C83 /* SelectPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoController.swift; sourceTree = "<group>"; };
+		AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyEmployeeModels.xcdatamodel; sourceTree = "<group>"; };
+		AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		AA0F779721DA39CC00C67AAA /* CoreDataCourse */ = {
 			isa = PBXGroup;
 			children = (
+				AAD1BA5421E489BC002DE164 /* Helpers */,
 				AA0F77B321DA530800C67AAA /* Models */,
 				AA0F77B021DA4D6300C67AAA /* Views */,
 				AA0F77AF21DA4D5100C67AAA /* Controllers */,
@@ -113,8 +118,17 @@
 			isa = PBXGroup;
 			children = (
 				AA0F77B421DA531200C67AAA /* Company.swift */,
+				AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AAD1BA5421E489BC002DE164 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +205,8 @@
 				AA0F77AE21DA3F3600C67AAA /* CustomNavigationController.swift in Sources */,
 				AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */,
 				AA0F77B721DA556C00C67AAA /* Anchor.swift in Sources */,
+				AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */,
+				AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */,
 				AA0F779B21DA39CC00C67AAA /* ViewController.swift in Sources */,
 				AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */,
 				AA0F77AC21DA3C7200C67AAA /* Colors.swift in Sources */,
@@ -396,6 +412,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */,
+			);
+			currentVersion = AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */;
+			path = CompanyEmployeeModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA0F778D21DA39CC00C67AAA /* Project object */;
 }

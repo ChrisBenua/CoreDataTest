@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
+
 
 class CompaniesController: UITableViewController {
 
-    var companies = [Company(name: "Apple", founded : Date(), photo : Data(), employees : []), Company(name: "Google", founded: Date(), photo: Data(), employees: [])]
+    var companies = [Company]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,26 @@ class CompaniesController: UITableViewController {
         tableView.register(CompanyTableViewCell.self, forCellReuseIdentifier: "id")
         
         tableView.tableFooterView = UIView()
+        
+        fetchComapnies()
+        
+    }
+    
+    
+    private func fetchComapnies() {
+        //core data fetch
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Company")
+        do {
+        
+            self.companies = try CoreDataManager.shared.context.fetch(fetchRequest) as! [Company]
+            companies.forEach { (comp) in
+                print(comp.name)
+            }
+            self.tableView.reloadData()
+
+        } catch let err {
+            print("Failed to fetch companies", err)
+        }
     }
     
     @objc func plusButtonPressed() {

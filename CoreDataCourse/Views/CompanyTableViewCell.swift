@@ -14,8 +14,12 @@ class CompanyTableViewCell : UITableViewCell {
     
     var company : Company! {
         didSet {
-            myImageView.image = UIImage(data: company.photo)
             companyNameLabel.text = company.name
+
+            guard let data = company.photo else {
+                return
+            }
+            myImageView.image = UIImage(data: data)
         }
     }
     

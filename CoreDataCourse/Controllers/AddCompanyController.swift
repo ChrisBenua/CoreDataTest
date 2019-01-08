@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol SaveCompanyDelegate : class {
     func passCompany(comapany : Company)
@@ -130,11 +131,29 @@ class AddCompanyController : UIViewController {
     @objc func handleSaveButton() {
         print("Saving Company")
         
-        let company = Company(name: textbox.text ?? "", founded : datePicker.date, photo : selectImageView.image?.pngData() ?? Data(), employees: [])
+        let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: CoreDataManager.shared.context)
         
-        dismiss(animated: true) {
-            self.delegate?.passCompany(comapany: company)
+        company.setValue(textbox.text ?? "", forKey: "name")
+        company.setValue(datePicker.date, forKey: "founded")
+        company.setValue(selectImageView.image?.pngData(), forKey: "photo")
+        
+        
+        do {
+            try CoreDataManager.shared.context.save()
+            dismiss(animated: true) {
+                self.delegate?.passCompany(comapany: company as! Company)
+            }
+        } catch let err {
+            print("Error in saving context AddComapnyController", err)
         }
+        
+        //let company = //Company(name: textbox.text ?? "", founded : datePicker.date, photo : selectImageView.image?.pngData() ?? Data())
+        
+        
+    }
+    
+    func coreDataInit() {
+        
     }
     
 }

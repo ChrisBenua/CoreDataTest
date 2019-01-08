@@ -8,16 +8,23 @@
 
 import Foundation
 
-struct Company {
-    let name : String
-    let founded : Date
-    let photo : Data
-    let employees : [Employee]
-}
+/*struct Company {
+    var name : String
+    var founded : Date
+    var photo : Data
+    var employees : [Employee]
+}*/
 
-struct Employee {
-    let name : String
-    let birthday : Date
-    let type : String
-    let company : Company
+class Employee {
+    var name : String
+    var birthday : Date
+    var type : String
+    var company : Company
+    
+    init(name : String, bithday : Date, type : String, company : Company) {
+        self.name = name
+        self.birthday = bithday
+        self.type = type
+        self.company = company
+    }
 }
