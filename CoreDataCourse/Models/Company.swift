@@ -15,7 +15,7 @@ import Foundation
     var employees : [Employee]
 }*/
 
-class Employee {
+/*class Employee {
     var name : String
     var birthday : Date
     var type : String
@@ -27,4 +27,4 @@ class Employee {
         self.type = type
         self.company = company
     }
-}
+}*/

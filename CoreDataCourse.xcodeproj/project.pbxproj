@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA0F779921DA39CC00C67AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F779821DA39CC00C67AAA /* AppDelegate.swift */; };
-		AA0F779B21DA39CC00C67AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F779A21DA39CC00C67AAA /* ViewController.swift */; };
+		AA0F779B21DA39CC00C67AAA /* CompaniesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F779A21DA39CC00C67AAA /* CompaniesController.swift */; };
 		AA0F779E21DA39CC00C67AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0F779C21DA39CC00C67AAA /* Main.storyboard */; };
 		AA0F77A021DA39CE00C67AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0F779F21DA39CE00C67AAA /* Assets.xcassets */; };
 		AA0F77A321DA39CE00C67AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0F77A121DA39CE00C67AAA /* LaunchScreen.storyboard */; };
@@ -17,6 +17,14 @@
 		AA0F77B221DA4D9C00C67AAA /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F77B121DA4D9C00C67AAA /* CompanyTableViewCell.swift */; };
 		AA0F77B521DA531200C67AAA /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F77B421DA531200C67AAA /* Company.swift */; };
 		AA0F77B721DA556C00C67AAA /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0F77B621DA556C00C67AAA /* Anchor.swift */; };
+		AA1A90D821E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90D721E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift */; };
+		AA1A90DA21E915160019AB14 /* CompaniesController+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90D921E915160019AB14 /* CompaniesController+TableViewDelegates.swift */; };
+		AA1A90DC21E915670019AB14 /* CompaniesController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90DB21E915670019AB14 /* CompaniesController+TableViewDataSource.swift */; };
+		AA1A90DE21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90DD21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift */; };
+		AA1A90E021E9166B0019AB14 /* CompanyController+Footers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90DF21E9166B0019AB14 /* CompanyController+Footers.swift */; };
+		AA1A90E221E9168E0019AB14 /* CompanyController+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90E121E9168E0019AB14 /* CompanyController+Headers.swift */; };
+		AA1A90E421E91A530019AB14 /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90E321E91A530019AB14 /* EmployeesController.swift */; };
+		AA1A90E821E91FCB0019AB14 /* CreateEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */; };
 		AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D091821DE1F57008859E1 /* AddCompanyController.swift */; };
 		AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31270921DE9628004F7C83 /* SelectPhotoController.swift */; };
 		AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */; };
@@ -26,7 +34,7 @@
 /* Begin PBXFileReference section */
 		AA0F779521DA39CC00C67AAA /* CoreDataCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0F779821DA39CC00C67AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA0F779A21DA39CC00C67AAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA0F779A21DA39CC00C67AAA /* CompaniesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesController.swift; sourceTree = "<group>"; };
 		AA0F779D21DA39CC00C67AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA0F779F21DA39CE00C67AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA0F77A221DA39CE00C67AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +44,14 @@
 		AA0F77B121DA4D9C00C67AAA /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		AA0F77B421DA531200C67AAA /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		AA0F77B621DA556C00C67AAA /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		AA1A90D721E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+SaveCompanyDelegate.swift"; sourceTree = "<group>"; };
+		AA1A90D921E915160019AB14 /* CompaniesController+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+TableViewDelegates.swift"; sourceTree = "<group>"; };
+		AA1A90DB21E915670019AB14 /* CompaniesController+TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+TableViewDataSource.swift"; sourceTree = "<group>"; };
+		AA1A90DD21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCompanyController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		AA1A90DF21E9166B0019AB14 /* CompanyController+Footers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyController+Footers.swift"; sourceTree = "<group>"; };
+		AA1A90E121E9168E0019AB14 /* CompanyController+Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompanyController+Headers.swift"; sourceTree = "<group>"; };
+		AA1A90E321E91A530019AB14 /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
+		AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployee.swift; sourceTree = "<group>"; };
 		AA2D091821DE1F57008859E1 /* AddCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyController.swift; sourceTree = "<group>"; };
 		AA31270921DE9628004F7C83 /* SelectPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoController.swift; sourceTree = "<group>"; };
 		AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyEmployeeModels.xcdatamodel; sourceTree = "<group>"; };
@@ -99,9 +115,11 @@
 		AA0F77AF21DA4D5100C67AAA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AA0F779A21DA39CC00C67AAA /* ViewController.swift */,
-				AA2D091821DE1F57008859E1 /* AddCompanyController.swift */,
+				AA1A90E621E91F770019AB14 /* AddCompanyController */,
+				AA1A90E521E91F5F0019AB14 /* CompaniesController */,
+				AA1A90E321E91A530019AB14 /* EmployeesController.swift */,
 				AA31270921DE9628004F7C83 /* SelectPhotoController.swift */,
+				AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +139,28 @@
 				AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AA1A90E521E91F5F0019AB14 /* CompaniesController */ = {
+			isa = PBXGroup;
+			children = (
+				AA0F779A21DA39CC00C67AAA /* CompaniesController.swift */,
+				AA1A90D721E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift */,
+				AA1A90D921E915160019AB14 /* CompaniesController+TableViewDelegates.swift */,
+				AA1A90DB21E915670019AB14 /* CompaniesController+TableViewDataSource.swift */,
+				AA1A90DF21E9166B0019AB14 /* CompanyController+Footers.swift */,
+				AA1A90E121E9168E0019AB14 /* CompanyController+Headers.swift */,
+			);
+			path = CompaniesController;
+			sourceTree = "<group>";
+		};
+		AA1A90E621E91F770019AB14 /* AddCompanyController */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D091821DE1F57008859E1 /* AddCompanyController.swift */,
+				AA1A90DD21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift */,
+			);
+			path = AddCompanyController;
 			sourceTree = "<group>";
 		};
 		AAD1BA5421E489BC002DE164 /* Helpers */ = {
@@ -202,17 +242,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1A90DA21E915160019AB14 /* CompaniesController+TableViewDelegates.swift in Sources */,
 				AA0F77AE21DA3F3600C67AAA /* CustomNavigationController.swift in Sources */,
+				AA1A90E021E9166B0019AB14 /* CompanyController+Footers.swift in Sources */,
 				AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */,
 				AA0F77B721DA556C00C67AAA /* Anchor.swift in Sources */,
 				AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */,
 				AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */,
-				AA0F779B21DA39CC00C67AAA /* ViewController.swift in Sources */,
+				AA1A90E821E91FCB0019AB14 /* CreateEmployee.swift in Sources */,
+				AA0F779B21DA39CC00C67AAA /* CompaniesController.swift in Sources */,
+				AA1A90DE21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift in Sources */,
+				AA1A90D821E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift in Sources */,
+				AA1A90E221E9168E0019AB14 /* CompanyController+Headers.swift in Sources */,
 				AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */,
 				AA0F77AC21DA3C7200C67AAA /* Colors.swift in Sources */,
+				AA1A90E421E91A530019AB14 /* EmployeesController.swift in Sources */,
 				AA0F77B221DA4D9C00C67AAA /* CompanyTableViewCell.swift in Sources */,
 				AA0F779921DA39CC00C67AAA /* AppDelegate.swift in Sources */,
 				AA0F77B521DA531200C67AAA /* Company.swift in Sources */,
+				AA1A90DC21E915670019AB14 /* CompaniesController+TableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

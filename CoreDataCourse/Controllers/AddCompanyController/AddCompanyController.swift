@@ -12,6 +12,8 @@ import CoreData
 
 protocol SaveCompanyDelegate : class {
     func passCompany(comapany : Company)
+    
+    func companyUpdated(company : Company)
 }
 
 
@@ -19,20 +21,33 @@ class AddCompanyController : UIViewController {
     
     weak var delegate : SaveCompanyDelegate?
     
-    let selectImageView : UIImageView = {
+    var editedCompany : Company? {
+        didSet {
+            selectImageView.image = UIImage(data: editedCompany!.photo!)
+            nameTextField.text = editedCompany!.name
+            datePicker.date = editedCompany!.founded ?? Date()
+            navigationItem.title = "Edit Company"
+        }
+    }
+    
+    lazy var selectImageView : UIImageView = {
         let iv = UIImageView()
+        iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFit
         iv.image = #imageLiteral(resourceName: "select_photo_empty")
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPhotoController)))
         return iv
     }()
     
-    let selectPhotoButton : UIButton = {
+    lazy var selectPhotoButton : UIButton = {
         let but = UIButton(type: .system)
         
         but.layer.cornerRadius = 8
         but.clipsToBounds = true
         but.layer.borderWidth = 2
         but.setAttributedTitle(NSAttributedString(string: "Select Photo", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18), NSAttributedString.Key.foregroundColor : UIColor.black]), for: .normal)
+        but.addTarget(self, action: #selector(showPhotoController), for: .touchUpInside)
         return but
     }()
     
@@ -43,7 +58,7 @@ class AddCompanyController : UIViewController {
         return label
     }()
     
-    let textbox : UITextField = {
+    let nameTextField : UITextField = {
         let tb = UITextField()
         tb.placeholder = "Enter name"
         tb.font = UIFont.systemFont(ofSize: 14)
@@ -73,6 +88,15 @@ class AddCompanyController : UIViewController {
         return dp
     }()
     
+    @objc func showPhotoController() {
+        print("Show Photo COntroller")
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     @objc func handleDatePickerDateChanged() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
@@ -81,14 +105,25 @@ class AddCompanyController : UIViewController {
         foundedDateLabel.text = strDate
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(selectImageView.bounds)
+        
+        selectImageView.layer.cornerRadius = selectImageView.bounds.height / 2
+        selectImageView.layer.borderWidth = 0.7
+        selectImageView.layer.borderColor = UIColor.black.cgColor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         handleDatePickerDateChanged()
         view.backgroundColor = UIColor.mainBackgroundColor()
         
-        navigationItem.title = "Create Company"
+        if (editedCompany == nil) {
+            navigationItem.title = "Create Company"
+        }
         navigationController?.navigationBar.isTranslucent = false
-        let nameStackView = UIStackView(arrangedSubviews: [nameLabel, textbox])
+        let nameStackView = UIStackView(arrangedSubviews: [nameLabel, nameTextField])
         let foundedStackView = UIStackView(arrangedSubviews: [foundedLabel, foundedDateLabel])
         nameLabel.widthAnchor.constraint(equalTo: nameStackView.widthAnchor, multiplier: 0.25, constant: 0).isActive = true
         nameStackView.distribution = .fillProportionally
@@ -96,18 +131,22 @@ class AddCompanyController : UIViewController {
         foundedStackView.distribution = .fillProportionally
         foundedLabel.widthAnchor.constraint(equalTo: foundedStackView.widthAnchor, multiplier: 0.25, constant: 0).isActive = true
         foundedStackView.axis = .horizontal
-        
-        let commonStackView = UIStackView(arrangedSubviews: [selectImageView, selectPhotoButton, nameStackView, foundedStackView, datePicker])
+        let helpView = UIView()
+        helpView.addSubview(selectImageView)
+        selectImageView.anchor(top: helpView.topAnchor, left: nil, bottom: helpView.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        selectImageView.widthAnchor.constraint(equalTo: selectImageView.heightAnchor, multiplier: 1).isActive = true
+        selectImageView.centerXAnchor.constraint(equalTo: helpView.centerXAnchor).isActive = true
+        let commonStackView = UIStackView(arrangedSubviews: [helpView, selectPhotoButton, nameStackView, foundedStackView, datePicker])
         commonStackView.distribution = .fillProportionally
         commonStackView.axis = .vertical
         
-        selectImageView.heightAnchor.constraint(equalTo: commonStackView.heightAnchor, multiplier: 0.25, constant: 0).isActive = true
+        helpView.heightAnchor.constraint(equalTo: commonStackView.heightAnchor, multiplier: 0.25, constant: 0).isActive = true
         selectPhotoButton.heightAnchor.constraint(equalTo: commonStackView.heightAnchor, multiplier: 0.1, constant: 0).isActive = true
         nameStackView.heightAnchor.constraint(equalTo: commonStackView.heightAnchor, multiplier: 0.1, constant: 0).isActive = true
         foundedStackView.heightAnchor.constraint(equalTo: commonStackView.heightAnchor, multiplier: 0.1, constant: 0).isActive = true
         
         view.addSubview(commonStackView)
-        commonStackView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: 0, height: 0)
+        commonStackView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 8, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: 0, height: 0)
         
         let helperView : UIView = UIView()
         helperView.backgroundColor = .white
@@ -128,12 +167,10 @@ class AddCompanyController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func handleSaveButton() {
-        print("Saving Company")
-        
+    fileprivate func CreateCompany() {
         let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: CoreDataManager.shared.context)
         
-        company.setValue(textbox.text ?? "", forKey: "name")
+        company.setValue(nameTextField.text ?? "", forKey: "name")
         company.setValue(datePicker.date, forKey: "founded")
         company.setValue(selectImageView.image?.pngData(), forKey: "photo")
         
@@ -146,6 +183,31 @@ class AddCompanyController : UIViewController {
         } catch let err {
             print("Error in saving context AddComapnyController", err)
         }
+    }
+    
+    @objc func handleSaveButton() {
+        print("Saving Company")
+        
+        if editedCompany == nil {
+        
+            CreateCompany()
+        } else {
+            
+            let context = CoreDataManager.shared.context
+            
+            editedCompany?.name = nameTextField.text
+            editedCompany?.founded = datePicker.date
+            editedCompany?.photo = selectImageView.image?.pngData()
+            
+            do {
+                try context.save()
+                dismiss(animated: true) {
+                    self.delegate?.companyUpdated(company : self.editedCompany!)
+                }
+            } catch let err {
+                print("Failed to Update Company", err)
+            }
+        }
         
         //let company = //Company(name: textbox.text ?? "", founded : datePicker.date, photo : selectImageView.image?.pngData() ?? Data())
         
@@ -155,5 +217,9 @@ class AddCompanyController : UIViewController {
     func coreDataInit() {
         
     }
+    
+}
+
+extension AddCompanyController : UINavigationControllerDelegate {
     
 }

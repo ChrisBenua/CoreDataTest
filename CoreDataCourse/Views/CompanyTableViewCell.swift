@@ -14,7 +14,17 @@ class CompanyTableViewCell : UITableViewCell {
     
     var company : Company! {
         didSet {
-            companyNameLabel.text = company.name
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd, yyyy"
+            
+            
+            
+            if let date = company.founded, let name = company.name {
+                companyNameLabel.text = name +  " - Founded: " + dateFormatter.string(from: date)
+            } else {
+                companyNameLabel.text = company.name!
+            }
 
             guard let data = company.photo else {
                 return
