@@ -24,4 +24,6 @@ extension UIColor {
     }
     
     public static let mainLightBlue = UIColor(red: 218/255, green: 235/255, blue: 243/255, alpha: 1)
+    
+    public static let darkBlue = UIColor(red: 0, green: 0, blue: 205/255, alpha: 1)
 }

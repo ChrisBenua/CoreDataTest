@@ -54,4 +54,21 @@ class CoreDataManager {
             return [].indices
         }
     }
+    
+    
+    public func createEmployee(keys : [String : Any]) -> (Error?, Employee) {
+        let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context)
+        
+        for key in keys.keys {
+            employee.setValue(keys[key], forKey: key)
+        }
+        
+        do {
+            try context.save()
+        } catch let err {
+            return (err, employee as! Employee)
+            print("Failed to create new employee", err)
+        }
+        return (nil, employee as! Employee)
+    }
 }

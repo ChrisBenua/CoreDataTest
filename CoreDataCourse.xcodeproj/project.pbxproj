@@ -27,6 +27,7 @@
 		AA1A90E821E91FCB0019AB14 /* CreateEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */; };
 		AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D091821DE1F57008859E1 /* AddCompanyController.swift */; };
 		AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31270921DE9628004F7C83 /* SelectPhotoController.swift */; };
+		AA51CFE121EFAFB700E24602 /* EmployeeTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */; };
 		AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */; };
 		AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployee.swift; sourceTree = "<group>"; };
 		AA2D091821DE1F57008859E1 /* AddCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyController.swift; sourceTree = "<group>"; };
 		AA31270921DE9628004F7C83 /* SelectPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoController.swift; sourceTree = "<group>"; };
+		AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTypeEnumeration.swift; sourceTree = "<group>"; };
 		AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyEmployeeModels.xcdatamodel; sourceTree = "<group>"; };
 		AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */,
+				AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				AA1A90E421E91A530019AB14 /* EmployeesController.swift in Sources */,
 				AA0F77B221DA4D9C00C67AAA /* CompanyTableViewCell.swift in Sources */,
 				AA0F779921DA39CC00C67AAA /* AppDelegate.swift in Sources */,
+				AA51CFE121EFAFB700E24602 /* EmployeeTypeEnumeration.swift in Sources */,
 				AA0F77B521DA531200C67AAA /* Company.swift in Sources */,
 				AA1A90DC21E915670019AB14 /* CompaniesController+TableViewDataSource.swift in Sources */,
 			);
