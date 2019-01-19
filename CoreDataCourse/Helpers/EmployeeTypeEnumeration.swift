@@ -10,6 +10,6 @@ import Foundation
 
 enum EmployeeType : String, CaseIterable {
     case executive = "Executive"
-    case senior = "Senior Manager"
-    case stuff = "Stuff"
+    case senior = "Senior Management"
+    case staff = "Staff"
 }

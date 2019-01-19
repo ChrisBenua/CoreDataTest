@@ -77,7 +77,7 @@ extension EmployeesController {
         if (employee.birthday != nil) {
             dateText = dateFormatter.string(from: employee.birthday!)
         }
-        cell.textLabel?.text = employee.name! + "    " + dateText
+        cell.textLabel?.text = employee.fullName! + "    " + dateText
         cell.backgroundColor = UIColor.mainCellBackgroundColor()
         return cell
     }

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        let vc = CompaniesController()
+        let vc = CompaniesAutoUpdateController()
         //vc.view.backgroundColor = .blue
         window?.rootViewController = CustomNavigationController(rootViewController: vc)
         

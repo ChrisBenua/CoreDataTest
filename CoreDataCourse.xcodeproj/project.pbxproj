@@ -28,6 +28,10 @@
 		AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2D091821DE1F57008859E1 /* AddCompanyController.swift */; };
 		AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31270921DE9628004F7C83 /* SelectPhotoController.swift */; };
 		AA51CFE121EFAFB700E24602 /* EmployeeTypeEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */; };
+		AACD8BEA21F0FEF9006CCD33 /* CompaniesAutoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD8BE921F0FEF9006CCD33 /* CompaniesAutoUpdateController.swift */; };
+		AACD8BEC21F109CC006CCD33 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD8BEB21F109CC006CCD33 /* PaddingLabel.swift */; };
+		AACD8BEE21F24DC7006CCD33 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD8BED21F24DC7006CCD33 /* APIHelper.swift */; };
+		AACD8BF021F255A5006CCD33 /* DataDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACD8BEF21F255A5006CCD33 /* DataDownload.swift */; };
 		AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */; };
 		AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,11 @@
 		AA2D091821DE1F57008859E1 /* AddCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyController.swift; sourceTree = "<group>"; };
 		AA31270921DE9628004F7C83 /* SelectPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoController.swift; sourceTree = "<group>"; };
 		AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTypeEnumeration.swift; sourceTree = "<group>"; };
+		AACAAC3421F2E12300AFCA24 /* CompanyEmployeeModels_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyEmployeeModels_2.xcdatamodel; sourceTree = "<group>"; };
+		AACD8BE921F0FEF9006CCD33 /* CompaniesAutoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesAutoUpdateController.swift; sourceTree = "<group>"; };
+		AACD8BEB21F109CC006CCD33 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		AACD8BED21F24DC7006CCD33 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		AACD8BEF21F255A5006CCD33 /* DataDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownload.swift; sourceTree = "<group>"; };
 		AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyEmployeeModels.xcdatamodel; sourceTree = "<group>"; };
 		AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +119,8 @@
 				AA0F77AB21DA3C7200C67AAA /* Colors.swift */,
 				AA0F77AD21DA3F3600C67AAA /* CustomNavigationController.swift */,
 				AA0F77B621DA556C00C67AAA /* Anchor.swift */,
+				AACD8BEB21F109CC006CCD33 /* PaddingLabel.swift */,
+				AACD8BEF21F255A5006CCD33 /* DataDownload.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,6 +133,7 @@
 				AA1A90E321E91A530019AB14 /* EmployeesController.swift */,
 				AA31270921DE9628004F7C83 /* SelectPhotoController.swift */,
 				AA1A90E721E91FCB0019AB14 /* CreateEmployee.swift */,
+				AACD8BE921F0FEF9006CCD33 /* CompaniesAutoUpdateController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +182,7 @@
 			children = (
 				AAD1BA5521E489D7002DE164 /* CoreDataSingleton.swift */,
 				AA51CFE021EFAFB700E24602 /* EmployeeTypeEnumeration.swift */,
+				AACD8BED21F24DC7006CCD33 /* APIHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,13 +262,17 @@
 				AA0F77AE21DA3F3600C67AAA /* CustomNavigationController.swift in Sources */,
 				AA1A90E021E9166B0019AB14 /* CompanyController+Footers.swift in Sources */,
 				AA2D091921DE1F57008859E1 /* AddCompanyController.swift in Sources */,
+				AACD8BEE21F24DC7006CCD33 /* APIHelper.swift in Sources */,
 				AA0F77B721DA556C00C67AAA /* Anchor.swift in Sources */,
 				AAD1BA5621E489D7002DE164 /* CoreDataSingleton.swift in Sources */,
 				AAD1BA5321E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld in Sources */,
 				AA1A90E821E91FCB0019AB14 /* CreateEmployee.swift in Sources */,
+				AACD8BF021F255A5006CCD33 /* DataDownload.swift in Sources */,
 				AA0F779B21DA39CC00C67AAA /* CompaniesController.swift in Sources */,
 				AA1A90DE21E916240019AB14 /* AddCompanyController+UIImagePickerControllerDelegate.swift in Sources */,
+				AACD8BEC21F109CC006CCD33 /* PaddingLabel.swift in Sources */,
 				AA1A90D821E914BD0019AB14 /* CompaniesController+SaveCompanyDelegate.swift in Sources */,
+				AACD8BEA21F0FEF9006CCD33 /* CompaniesAutoUpdateController.swift in Sources */,
 				AA1A90E221E9168E0019AB14 /* CompanyController+Headers.swift in Sources */,
 				AA31270A21DE9628004F7C83 /* SelectPhotoController.swift in Sources */,
 				AA0F77AC21DA3C7200C67AAA /* Colors.swift in Sources */,
@@ -469,9 +486,10 @@
 		AAD1BA5121E479BB002DE164 /* CompanyEmployeeModels.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AACAAC3421F2E12300AFCA24 /* CompanyEmployeeModels_2.xcdatamodel */,
 				AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */,
 			);
-			currentVersion = AAD1BA5221E479BB002DE164 /* CompanyEmployeeModels.xcdatamodel */;
+			currentVersion = AACAAC3421F2E12300AFCA24 /* CompanyEmployeeModels_2.xcdatamodel */;
 			path = CompanyEmployeeModels.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
